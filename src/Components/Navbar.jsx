@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import {getTopics} from '../utils/api'
+
 const Navbar = () => {
   const [topics, setTopics] = useState([]);
   useEffect(() => {
-    axios
-      .get(`https://niamh-news.herokuapp.com/api/topics`)
-      .then(({ data }) => {
+      getTopics()
+      .then((data) => {
         setTopics(data.topics);
       });
   }, []);

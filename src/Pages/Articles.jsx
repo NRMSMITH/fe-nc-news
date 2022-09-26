@@ -1,13 +1,13 @@
-import axios from "axios";
 import { useEffect, useState } from "react"
 import { ArticleCard } from "../Components/ArticleCard";
+import { getArticles } from "../utils/api";
 
 export const Articles = ({topics}) => {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://niamh-news.herokuapp.com/api/articles`)
-        .then(({data}) => {
+        getArticles()
+        .then((data) => {
             setArticles(data.articles)
         })
     }, [])
