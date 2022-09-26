@@ -18,7 +18,7 @@ const Navbar = () => {
         </li>
         {topics.map((topic) => {
           return (
-            <Link key={topic.slug} to={`/articles/topics/${topic.slug}`}>
+            <Link key={topic.slug} to={`/topics/${topic.slug}`}>
               <li>{topic.slug}</li>
             </Link>
           );
