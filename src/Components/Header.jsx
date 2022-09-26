@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <h1 className="header">
-        <u>NS Marketplace</u>
+        <u>NS News</u>
       </h1>
       {<Navbar />}
     </header>
