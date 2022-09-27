@@ -12,12 +12,12 @@ export const SingleArticle = () => {
 
     const changeVote = () => {
         setErr(null)
+        setCount(count + 1)
         updateVote(article_id)
         .catch((err) => {
-            setCount((count) => count - 1);
             setErr('Something went wrong, please try again.')
+            setCount((count) => count - 1);
         })
-        setCount(count + 1)
     }
 
     useEffect(() => {
