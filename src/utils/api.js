@@ -25,3 +25,10 @@ export const getArticlesByTopic = (slug) => {
         return res.data
     })
 }
+
+export const getSingleArticle = (article_id) => {
+    return newsApi.get(`/articles/${article_id}`)
+    .then((res) => {
+        return res.data
+    })
+}
