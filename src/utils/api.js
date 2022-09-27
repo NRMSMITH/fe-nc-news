@@ -32,3 +32,7 @@ export const getSingleArticle = (article_id) => {
         return res.data
     })
 }
+
+export const updateVote = (article_id) => {
+    return newsApi.patch(`/articles/${article_id}`, {inc_votes: 1})
+}
