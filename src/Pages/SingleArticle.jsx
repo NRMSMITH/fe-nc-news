@@ -7,10 +7,16 @@ export const SingleArticle = () => {
     const [singleArticle, setSingleArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
     const [count, setCount] = useState(0);
+    const [err, setErr] = useState(null);
     const { article_id } = useParams();
 
     const changeVote = () => {
+        setErr(null)
         updateVote(article_id)
+        .catch((err) => {
+            setCount((count) => count - 1);
+            setErr('Something went wrong, please try again.')
+        })
         setCount(count + 1)
     }
 
@@ -29,6 +35,7 @@ return (
         <h2>{singleArticle.title}</h2> <h3>(by {singleArticle.author})</h3>
         <p>{singleArticle.body}</p>
         <p>Votes: {singleArticle.votes + count}</p>
+        {err && <p>{err}</p>}
         <button onClick={changeVote}>Vote for me!</button>
     </section>
 )
