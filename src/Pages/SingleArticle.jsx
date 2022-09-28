@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getSingleArticle, updateVote, getComments } from "../utils/api";
 import { CommentCard } from '../Components/CommentCard'
+import { AddNewComment } from "../Components/AddNewComment";
 
-export const SingleArticle = () => {
+export const SingleArticle = ({topics}) => {
 
     const [singleArticle, setSingleArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
@@ -40,6 +41,7 @@ export const SingleArticle = () => {
         })
     }, [article_id])
 
+
     if(isLoading) return <h4>Getting your article ...</h4>
 return (
     <section>
@@ -57,7 +59,10 @@ return (
               />
             ); 
         })}
-    </section>
+        
+            <AddNewComment article={singleArticle} topics={topics} setComments={setComments}/>
+        
+        </section>
 )
 
 }
