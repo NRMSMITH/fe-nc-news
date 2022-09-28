@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Articles } from './Pages/Articles'
 import { Topics } from './Pages/Topics'
 import { SingleArticle } from './Pages/SingleArticle';
+import { AddNewComment } from './Components/AddNewComment';
 
 function App() {
 

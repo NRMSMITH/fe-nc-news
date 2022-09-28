@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { ArticleCard } from "../Components/ArticleCard";
 import { getArticles } from "../utils/api";
 
-export const Articles = ({topics}) => {
+export const Articles = () => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {

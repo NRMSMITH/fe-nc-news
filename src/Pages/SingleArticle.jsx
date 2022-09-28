@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getSingleArticle, updateVote, getComments } from "../utils/api";
 import { CommentCard } from '../Components/CommentCard'
+import { AddNewComment } from "../Components/AddNewComment";
 
-export const SingleArticle = () => {
+export const SingleArticle = ({topics}) => {
 
     const [singleArticle, setSingleArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
@@ -40,6 +41,7 @@ export const SingleArticle = () => {
         })
     }, [article_id])
 
+
     if(isLoading) return <h4>Getting your article ...</h4>
 return (
     <section>
@@ -48,16 +50,19 @@ return (
         <p>Votes: {singleArticle.votes + count}</p>
         {err && <p>{err}</p>}
         <button onClick={changeVote}>Vote for me!</button>
+        <AddNewComment article={singleArticle} topics={topics} setComments={setComments}/>
         <h3>Comments:</h3>
         {comments.map((comment) => {
             return (
-              <CommentCard
+                <CommentCard
                 key={comment.comment_id}
                 comment={comment}
-              />
-            ); 
-        })}
-    </section>
+                />
+                ); 
+            })}
+        
+        
+        </section>
 )
 
 }

@@ -40,6 +40,15 @@ export const updateVote = (article_id) => {
 export const getComments = (article_id) => {
     return newsApi.get(`/articles/${article_id}/comments`)
     .then((res) => {
+        console.log(res.data.comments)
+        return res.data
+    })
+}
+
+export const addComment = (newComment, article_id) => {
+    return newsApi.post(`/articles/${article_id}/comments`, newComment)
+    .then((res) => {
+        console.log(res.comments)
         return res.data
     })
 }
