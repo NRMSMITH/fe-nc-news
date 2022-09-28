@@ -17,7 +17,6 @@ function App() {
         <Route path="/" element={<Articles />} />
         <Route path={`/topics/:topic_name`} element={<Topics />} />
         <Route path={`/articles/:article_id`} element={<SingleArticle />} />
-        <Route path={`/articles/:article_id/addcomment`} element={<AddNewComment />} />
       </Routes>
       <Footer />
     </section>

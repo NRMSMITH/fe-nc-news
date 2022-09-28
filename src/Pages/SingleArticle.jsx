@@ -50,17 +50,17 @@ return (
         <p>Votes: {singleArticle.votes + count}</p>
         {err && <p>{err}</p>}
         <button onClick={changeVote}>Vote for me!</button>
+        <AddNewComment article={singleArticle} topics={topics} setComments={setComments}/>
         <h3>Comments:</h3>
         {comments.map((comment) => {
             return (
-              <CommentCard
+                <CommentCard
                 key={comment.comment_id}
                 comment={comment}
-              />
-            ); 
-        })}
+                />
+                ); 
+            })}
         
-            <AddNewComment article={singleArticle} topics={topics} setComments={setComments}/>
         
         </section>
 )
