@@ -4,9 +4,9 @@ const newsApi = axios.create({
   baseURL: `https://niamh-news.herokuapp.com/api`,
 });
 
-export const getArticles = ({params, topic_name: topic, order, created_at, comment_count, votes}) => {
+export const getArticles = (params) => {
     return newsApi
-    .get('/articles', {params: {...params, topic, order, created_at, comment_count, votes}})
+    .get('/articles', {params})
     .then((res) => {
         return res.data;
     });
@@ -14,13 +14,6 @@ export const getArticles = ({params, topic_name: topic, order, created_at, comme
 
 export const getTopics = () => {
     return newsApi.get('/topics')
-    .then((res) => {
-        return res.data
-    })
-}
-
-export const getArticlesByTopic = (slug) => {
-    return newsApi.get(`/articles?topic=${slug}`)
     .then((res) => {
         return res.data
     })
