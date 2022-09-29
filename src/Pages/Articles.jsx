@@ -7,7 +7,6 @@ import { getArticles } from '../utils/api'
     const [params, setParams] = useState({order: "asc"});
     const [isLoading, setIsLoading] = useState(false);
     const [articles, setArticles] = useState([]);
-    const [dropdown, setDropdown] = useState("")
     const { topic_name } = useParams();
   
 
@@ -32,31 +31,25 @@ useEffect(() => {
     };
 
     const handleSubmit = (e) => {
-      if(dropdown !== '') {
-        handleSort(e)
-        setParams((currParams) => ({ ...currParams, sort_by: dropdown }));
-      }
+          setParams((currParams) => ({ ...currParams, sort_by: e.target.value }));
     }
-
-    const handleSort = (e) => {
-      setDropdown(e.target.value)
-    }
-
-
 
 if (isLoading) return <h4>Getting your articles ...</h4>
 
     return (
       <section>
-        <select value={dropdown} onChange={handleSubmit}>
+        <select value={params.sort_by} onChange={handleSubmit}>
           <option value='' disabled>Sort By ...</option>
           <option value="created_at">Date</option>
           <option value="title">Title</option>
           <option value="comment_count">Comments</option>
           <option value="votes">Votes</option>
         </select>
-        <button  onClick={handleSubmit} type="submit">Submit</button>
-        <button onClick={handleOrder}>{params.order}</button>
+        <select value={params.order} onChange={handleOrder}>
+          <option value='' disabled>Order ...</option>
+          <option value='asc'>Ascending</option>
+          <option value='desc'>Descending</option>
+        </select>
         <ul>
           {articles.map((article) => {
             return <ArticleCard key={article.article_id} article={article} />;
