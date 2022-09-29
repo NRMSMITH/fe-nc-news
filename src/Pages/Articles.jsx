@@ -31,22 +31,24 @@ useEffect(() => {
     })
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
       if(dropdown !== '') {
+        handleSort(e)
         setParams((currParams) => ({ ...currParams, sort_by: dropdown }));
       }
     }
 
-    const handleSort =(e)=>{
+    const handleSort = (e) => {
       setDropdown(e.target.value)
     }
+
 
 
 if (isLoading) return <h4>Getting your articles ...</h4>
 
     return (
       <section>
-        <select value={dropdown} onChange={handleSort}>
+        <select value={dropdown} onChange={handleSubmit}>
           <option value='' disabled>Sort By ...</option>
           <option value="created_at">Date</option>
           <option value="title">Title</option>
