@@ -52,3 +52,18 @@
   background-color: #f4f7f5;
   color: black;
 }
+
+.user_imgs {
+  display:flex;
+  justify-content: left;
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+    border-radius: 50%;
+}
+
+.user_card {
+  list-style: none;
+  background-color: #f4f7f5;
+  color: black;
+}
