@@ -57,6 +57,9 @@ a:active {
   list-style: none;
   background-color: #f4f7f5;
   color: black;
+  width: 20rem;
+  border-radius: 10%;
+  border: 1px black
 }
 
 .user_area {
