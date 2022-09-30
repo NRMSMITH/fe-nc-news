@@ -87,3 +87,9 @@ a:active {
 .error {
   text-align: center;
 }
+
+.log_button {
+  display: flex;
+  direction: column;
+  justify-content: center;
+}
