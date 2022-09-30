@@ -29,7 +29,7 @@ return (
             {users.map((user) => {
                 return <div key={user.username}>
                 <UserCard user={user} />
-                {loggedInUser.username === '' ? <button onClick={() => setLoggedInUser(user)}>Log In As {user.username}</button> : <button disabled>Logged In As {user.username}</button>}
+                {loggedInUser.username === '' ? <button onClick={() => setLoggedInUser(user)}>Log In As {user.username}</button> : <button disabled>Logged In As {loggedInUser.username}</button>}
                 </div>
             })}
         </ul>

@@ -32,7 +32,12 @@ a:active {
 .comment_card {
   list-style: none;
   background-color: #f4f7f5;
+  text-align: center;
   color: black;
+  border-style: groove;
+  border-color: black;
+  border-radius: 3rem;
+  padding:2px;
 }
 .comment_card:hover {
   background-color: pink;
@@ -61,4 +66,8 @@ a:active {
   height: 5em;
   object-fit: cover;
     border-radius: 50%;
+}
+
+.error {
+  text-align: center;
 }

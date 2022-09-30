@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { getSingleArticle, updateVote, getComments } from "../utils/api";
 import { CommentCard } from '../Components/CommentCard'
 import { AddNewComment } from "../Components/AddNewComment";
+import { Errors } from './Errors'
 
 export const SingleArticle = ({topics}) => {
 
@@ -11,6 +12,8 @@ export const SingleArticle = ({topics}) => {
     const [count, setCount] = useState(0);
     const [err, setErr] = useState(null);
     const [comments, setComments] = useState([]);
+    const [isError, setIsError] = useState(null)
+
     const { article_id } = useParams();
 
     const changeVote = () => {
@@ -30,6 +33,9 @@ export const SingleArticle = ({topics}) => {
             setSingleArticle(data.result)
             setIsLoading(false)
         })
+        .catch((err) => {
+            setIsError({err})
+          })
     }, [article_id])
 
     useEffect(() => {
@@ -38,9 +44,16 @@ export const SingleArticle = ({topics}) => {
         .then((data) => {
             setComments(data.comments)
             setIsLoading(false);
-        })
+        }).catch((err) => {
+            setIsError({err})
+          })
     }, [article_id])
 
+    if(isError) {
+        return (
+          <Errors message={isError.err.message}/>
+        )
+      }
 
     if(isLoading) return <h4>Getting your article ...</h4>
 return (
