@@ -67,3 +67,12 @@
   background-color: #f4f7f5;
   color: black;
 }
+
+.profile_img {
+  display:flex;
+  justify-content: left;
+  width: 5em;
+  height: 5em;
+  object-fit: cover;
+    border-radius: 50%;
+}
