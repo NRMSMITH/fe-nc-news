@@ -27,7 +27,7 @@ return (
     <section className="user_area">
         <ul className="user_list">
             {users.map((user) => {
-                return <div key={user.username}>
+                return <div className="user_div"key={user.username}>
                 <UserCard user={user} />
                 {loggedInUser.username === '' ? <button onClick={() => setLoggedInUser(user)}>Log In As {user.username}</button> : <button disabled>Logged In As {loggedInUser.username}</button>}
                 </div>

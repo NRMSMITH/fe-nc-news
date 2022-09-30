@@ -63,9 +63,16 @@ a:active {
 }
 .user_list {
   display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 5vh;
     align-self: center;
+}
+
+.user_div {
+  display: flex;
+  direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile_img {
