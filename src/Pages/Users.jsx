@@ -6,7 +6,6 @@ import { getUsers } from "../utils/api";
 export const Users = () => {
 const [users, setUsers] = useState([])
 const [isLoading, setIsLoading] = useState(false)
-const [isLoggedIn, setIsLoggedIn] = useState(false)
 const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
 
@@ -16,7 +15,6 @@ useEffect(() => {
     .then((data) => {
         setUsers(data.users)
         setIsLoading(false)
-        setIsLoggedIn(true)
     })
 }, [])
 
