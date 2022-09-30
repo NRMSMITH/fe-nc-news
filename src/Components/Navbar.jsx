@@ -22,7 +22,9 @@ const Navbar = () => {
               <li>{topic.slug}</li>
             </Link>
           );
-        })}
+        })}<Link to={`/users`}>
+        <li>Users</li>
+        </Link>
       </ul>
     </section>
   );

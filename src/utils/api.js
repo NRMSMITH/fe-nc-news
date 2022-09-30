@@ -40,7 +40,20 @@ export const getComments = (article_id) => {
 export const addComment = (newComment, article_id) => {
     return newsApi.post(`/articles/${article_id}/comments`, newComment)
     .then((res) => {
-        console.log(res.comments)
+        return res.data
+    })
+}
+
+export const getUsers = () => {
+    return newsApi.get(`/users`)
+    .then((res) => {
+        return res.data
+    })
+}
+
+export const deleteComment = (comment_id) => {
+    return newsApi.delete(`/comments/${comment_id}`)
+    .then((res) => {
         return res.data
     })
 }

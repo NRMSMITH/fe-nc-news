@@ -1,45 +1,27 @@
-.App {
-  text-align: center;
+
+a:link {
+  color: black
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:visited {
+  color: black
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a:hover {
+  color: rgb(40, 123, 40)
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:active {
+  color: purple
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .article_card {
   background-color: #f4f7f5;
   color:black;
+}
+
+.article_card:hover {
+  background-color: pink;
+  color: black; 
 }
 
 #navbar_list {
@@ -51,4 +33,32 @@
   list-style: none;
   background-color: #f4f7f5;
   color: black;
+}
+.comment_card:hover {
+  background-color: pink;
+  color: black; 
+}
+
+.user_imgs {
+  display:flex;
+  justify-content: left;
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+    border-radius: 50%;
+}
+
+.user_card {
+  list-style: none;
+  background-color: #f4f7f5;
+  color: black;
+}
+
+.profile_img {
+  display:flex;
+  justify-content: left;
+  width: 5em;
+  height: 5em;
+  object-fit: cover;
+    border-radius: 50%;
 }
