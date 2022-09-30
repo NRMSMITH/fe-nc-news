@@ -6,7 +6,6 @@ import { getUsers } from "../utils/api";
 export const Users = () => {
 const [users, setUsers] = useState([])
 const [isLoading, setIsLoading] = useState(false)
-const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
 
 useEffect(() => {
@@ -29,7 +28,6 @@ return (
             {users.map((user) => {
                 return <div className="user_div"key={user.username}>
                 <UserCard user={user} />
-                {loggedInUser.username === '' ? <button className="log_button" onClick={() => setLoggedInUser(user)}>Log In As {user.username}</button> : <button className="log_button" disabled>Logged In As {loggedInUser.username}</button>}
                 </div>
             })}
         </ul>
