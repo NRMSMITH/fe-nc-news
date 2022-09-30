@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Header = ({value}) => {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext)
-  console.log(loggedInUser, '<<loggedInUser')
-  console.log(value.setLoggedInUser, '<value.setloggedin')
+
   return (
     <header>
       <h1 className="header">
