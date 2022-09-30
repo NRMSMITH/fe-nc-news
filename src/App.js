@@ -5,16 +5,15 @@ import { Routes, Route } from 'react-router-dom'
 import { Topics } from './Pages/Articles'
 import { SingleArticle } from './Pages/SingleArticle';
 import { Users } from './Pages/Users';
-import {UserContext} from './Contexts/User'
-import {useContext} from 'react'
+import { UserContext } from './Contexts/User'
+import { useContext } from 'react'
 
 function App() {
   const value = useContext(UserContext)
 
   return (
     <section>
-      <Header />
-      <button className="log_out" onClick={() => value.setLoggedInUser(null)}>Log Out</button>
+      <Header value={value}/>
       <Routes>
         <Route path="/" element={<Topics />} />
         <Route path={`/topics/:topic_name`} element={<Topics />} />

@@ -27,9 +27,10 @@ return (
     <section>
         <ul className="user_list">
             {users.map((user) => {
-                return <li> <UserCard key={user.username} user={user} />
+                return <div key={user.username}>
+                <UserCard user={user} />
                 <button onClick={() => setLoggedInUser(user)}>Log In As {user.username}</button>
-                 </li>
+                </div>
             })}
         </ul>
     </section>

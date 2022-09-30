@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../Contexts/User";
 import { addComment } from '../utils/api'
+
 export const AddNewComment = ({ article, setComments }) => {
+  const { loggedInUser } = useContext(UserContext);
   const [newComment, setNewComment] = useState({
     body: "",
-    username: "jessjelly"
+    username: `${loggedInUser.username}`
   });
   const [posting, setPosting] = useState(false)
   const [error, setError] = useState(false)
@@ -34,7 +37,7 @@ const handleOnSubmit = (e) => {
     setNewComment(() => {
       return {
         body: "",
-        username: "jessjelly",
+        username: `${loggedInUser.username}`,
       };
     })
   })
@@ -48,7 +51,7 @@ const handleOnSubmit = (e) => {
   return (
     <form onSubmit={(e) => handleOnSubmit(e)}>
       <label>Username:</label>
-      <p>"You are currently logged in as: jessjelly"</p>
+      <p>`You are currently logged in as: {loggedInUser.username}`</p>
       <label htmlFor="body">Comment:</label>
       <br />
       <textarea
