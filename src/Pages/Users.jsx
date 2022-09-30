@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { UserCard } from "../Components/UserCard";
+import { UserCard } from '../Components/UserCard'
 import { UserContext } from "../Contexts/User";
 import { getUsers } from "../utils/api";
 
