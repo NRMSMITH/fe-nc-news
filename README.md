@@ -1,6 +1,6 @@
 # Welcome to NS News!
 
-The deployed version of this website: https://remarkable-rabanadas-a751d8.netlify.app/
+The deployed version of this website: https://niamh-news.netlify.app/
 
 The backend Repo can be found her: https://github.com/NRMSMITH/nc-news.git
 
