@@ -15,23 +15,23 @@ a:active {
   color: purple
 }
 .article_card {
-  background-color: #f4f7f5;
+  background-color: #CFDEE7;
   color:black;
 }
 
 .article_card:hover {
-  background-color: pink;
+  background-color: #92B4F4;
   color: black; 
 }
 
 #navbar_list {
   list-style: none;
-  background-color:#f4f7f5;
+  background-color:#CFDEE7;
 }
 
 .comment_card {
   list-style: none;
-  background-color: #f4f7f5;
+  background-color: #CFDEE7;
   text-align: center;
   color: black;
   border-style: groove;
@@ -40,7 +40,7 @@ a:active {
   padding:2px;
 }
 .comment_card:hover {
-  background-color: pink;
+  background-color: #92B4F4;
   color: black; 
 }
 
@@ -55,22 +55,21 @@ a:active {
 
 .user_card {
   list-style: none;
-  background-color: #f4f7f5;
+  background-color: #cFDEE7;
   color: black;
   width: 20rem;
   border-radius: 10%;
   border: 1px black
 }
-
-.user_area {
+.user_list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5vh;
-  align-self: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5vh;
+    align-self: center;
 }
 
 .profile_img {
-  display:flex;
+  display: flex;
   justify-content: left;
   width: 5em;
   height: 5em;
