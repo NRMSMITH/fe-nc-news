@@ -59,6 +59,13 @@ a:active {
   color: black;
 }
 
+.user_area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5vh;
+  align-self: center;
+}
+
 .profile_img {
   display:flex;
   justify-content: left;

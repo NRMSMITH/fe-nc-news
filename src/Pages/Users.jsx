@@ -24,7 +24,7 @@ if (isLoading) {
 
 
 return (
-    <section>
+    <section className="user_area">
         <ul className="user_list">
             {users.map((user) => {
                 return <div key={user.username}>
