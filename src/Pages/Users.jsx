@@ -6,7 +6,8 @@ import { getUsers } from "../utils/api";
 export const Users = () => {
 const [users, setUsers] = useState([])
 const [isLoading, setIsLoading] = useState(false)
-const { setLoggedInUser } = useContext(UserContext)
+const [isLoggedIn, setIsLoggedIn] = useState(false)
+const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
 
 useEffect(() => {
@@ -15,6 +16,7 @@ useEffect(() => {
     .then((data) => {
         setUsers(data.users)
         setIsLoading(false)
+        setIsLoggedIn(true)
     })
 }, [])
 
@@ -29,7 +31,7 @@ return (
             {users.map((user) => {
                 return <div key={user.username}>
                 <UserCard user={user} />
-                <button onClick={() => setLoggedInUser(user)}>Log In As {user.username}</button>
+                {loggedInUser.username === '' ? <button onClick={() => setLoggedInUser(user)}>Log In As {user.username}</button> : <button disabled>Logged In As {user.username}</button>}
                 </div>
             })}
         </ul>

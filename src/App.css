@@ -42,6 +42,11 @@
   color:black;
 }
 
+.article_card:hover {
+  background-color: pink;
+  color: black; 
+}
+
 #navbar_list {
   list-style: none;
   background-color:#f4f7f5;
