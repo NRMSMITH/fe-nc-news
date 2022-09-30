@@ -7,6 +7,7 @@ import { SingleArticle } from './Pages/SingleArticle';
 import { Users } from './Pages/Users';
 import { UserContext } from './Contexts/User'
 import { useContext } from 'react'
+import { Errors } from './Pages/Errors'
 
 function App() {
   const value = useContext(UserContext)
@@ -19,6 +20,7 @@ function App() {
         <Route path={`/topics/:topic_name`} element={<Topics />} />
         <Route path={`/articles/:article_id`} element={<SingleArticle />} />
         <Route path={`/users`} element={<Users />} />
+        <Route path={`*`} element={<Errors />} />
       </Routes>
       <Footer />
     </section>

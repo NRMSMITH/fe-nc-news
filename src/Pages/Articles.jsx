@@ -2,21 +2,28 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { ArticleCard } from '../Components/ArticleCard'
 import { getArticles } from '../utils/api'
+import { Errors } from "./Errors"
 
  export const Topics = () => {
     const [params, setParams] = useState({order: "asc"});
     const [isLoading, setIsLoading] = useState(false);
     const [articles, setArticles] = useState([]);
+    const [isError, setIsError] = useState(null)
     const { topic_name } = useParams();
   
 
 useEffect(() => {
   setIsLoading(true)
+  setIsError(null)
   getArticles({...params, topic: topic_name}).then((data) => {
     setArticles(data.articles);
     setIsLoading(false)
-  });
-}, [params, topic_name]);
+  })
+  .catch((err) => {
+      setIsError({err})
+  })
+
+}, [params, topic_name])
 
 
   
@@ -32,6 +39,12 @@ useEffect(() => {
 
     const handleSubmit = (e) => {
           setParams((currParams) => ({ ...currParams, sort_by: e.target.value }));
+    }
+
+    if(isError) {
+      return (
+        <Errors message={isError.err.response.data.msg}/>
+      )
     }
 
 if (isLoading) return <h4>Getting your articles ...</h4>
